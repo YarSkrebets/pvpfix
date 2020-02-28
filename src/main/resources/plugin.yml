@@ -1,0 +1,3 @@
+name: Pvpfix
+version: ${project.version}
+main: ru.sonicxd2.pvpfix.PvpFixPlugin
