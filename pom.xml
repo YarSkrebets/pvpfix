@@ -78,5 +78,12 @@
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>ru.cristalix.core</groupId>
+            <artifactId>bukkit-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>

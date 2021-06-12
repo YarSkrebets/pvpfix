@@ -28,8 +28,9 @@ public final class OldRegenerationListener implements Listener {
         e.setCancelled(true);
         val player = (Player) e.getEntity();
         if (System.currentTimeMillis() - lastRegen.getOrDefault(player, 0L) > Settings.REGENERATION_MILLIS) {
-            player.setHealth(Math.max(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue(),
+            player.setHealth(Math.min(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue(),
                     player.getHealth() + Settings.REGENERATION_HEALTH));
+            lastRegen.put(player, System.currentTimeMillis());
         }
         val exhaustion = player.getExhaustion() + Settings.REGENERATION_EXHAUSTION_PER_REGEN;
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
